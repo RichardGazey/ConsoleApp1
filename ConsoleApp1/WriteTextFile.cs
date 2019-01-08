@@ -76,7 +76,7 @@ public class WriteTextFile
             myConnection.Open();
 
             SqlCommand myCommand = new SqlCommand("INSERT INTO Person (FirstName, LastName) " +
-                                     "Values ('Bob', 'Bobby')", myConnection);
+                                     "Values ('Rob', 'Bobby')", myConnection);
 
             myCommand.ExecuteNonQuery();
 
