@@ -35,7 +35,7 @@ public class WriteTextFile
 
         var obj = new Lad
         {
-            firstName = "RIchard",
+            firstName = "RICHard",
             lastName = "Gazey",
             dateOfBirth = new MyDate
             {
