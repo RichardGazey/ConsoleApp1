@@ -1,19 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Newtonsoft;
 
-class WriteTextFile
+
+
+
+public class MyDate
 {
+    public int year;
+    public int month;
+    public int day;
+}
+
+public class Lad
+{
+    public string firstName;
+    public string lastName;
+    public MyDate dateOfBirth;
+}
+
+
+
+
+
+
+public class WriteTextFile
+{
+    
+
     static void Main()
     {
-        SqlConnection myConnection = new SqlConnection("user id=sa;" +
-                                               "password=OCyprn76;server=WALSNT80922\\SQLEXPRESS;" +
-                                               "Trusted_Connection=yes;" +
-                                               "database=TestCSharp; " +
-                                               "connection timeout=5");
+
+
+        var obj = new Lad
+        {
+            firstName = "Markoff",
+            lastName = "Chaney",
+            dateOfBirth = new MyDate
+            {
+                year = 1901,
+                month = 4,
+                day = 30
+            }
+          
+        };
+        //var json = new JsonSerializer.JsonSerializer(
+
+
+        // Console.WriteLine(json);
+
+
+
+
+
+
+
+
+        const string MyPassword = "password=OCyprn76;server=WALSNT80922\\SQLEXPRESS;";
+        const string MyConnectioNTiemout = "connection timeout=5";
+        const string MyTruestedConnection = "Trusted_Connection=yes;";
+        const string MyUSerid = "user id=sa;";
+        const string MyDatabase = "database=TestCSharp; ";
+        SqlConnection myConnection = new SqlConnection(MyUSerid +
+                                               MyPassword +
+                                               MyTruestedConnection +
+                                               MyDatabase +
+                                               MyConnectioNTiemout);
+        
+
+
 
         try
         {
@@ -30,24 +86,28 @@ class WriteTextFile
             Console.WriteLine(e.ToString());
         }
 
+
         try
         {
             SqlDataReader myReader = null;
             SqlCommand myCommand = new SqlCommand("select * from Person",
                                                      myConnection);
             myReader = myCommand.ExecuteReader();
-            System.IO.File.WriteAllText(@"C:\Ab Initio\WriteLines.txt","FirstName,LastName" + "\r\n");
+            int v_loop = 0;
+            System.IO.File.WriteAllText(@"C:\Ab Initio\WriteLines.txt","FirstName1,LastName" + "\r\n");
             while (myReader.Read())
             {
+
                 //      Console.WriteLine(myReader["FirstName"].ToString());
                 //      Console.WriteLine(myReader["LastName"].ToString());
 
                 string TrimString = myReader["FirstName"].ToString().Trim();
-
+                System.Threading.Thread.Sleep(300);
+                v_loop += 1;
+                string LoopString = v_loop.ToString();
                 
-
                 System.IO.File.AppendAllText(@"C:\Ab Initio\WriteLines.txt",
-                    myReader["FirstName"].ToString().Trim() + ","  + myReader["LastName"].ToString().Trim() + "\r\n");
+                    myReader["FirstName"].ToString().Trim() + "," + LoopString + "," + myReader["LastName"].ToString().Trim() + "\r\n");
 
 
 
