@@ -58,7 +58,7 @@ public class WriteTextFile
 
 
         const string MyPassword = "password=OCyprn76;server=WALSNT80922\\SQLEXPRESS;";
-        const string MyConnectioNTiemout = "connection timeout=5";
+        const string MyConnectioNTiemout = "connection timeout=15";
         const string MyTruestedConnection = "Trusted_Connection=yes;";
         const string MyUSerid = "user id=sa;";
         const string MyDatabase = "database=TestCSharp; ";
