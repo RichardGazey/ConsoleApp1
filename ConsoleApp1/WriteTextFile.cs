@@ -35,8 +35,8 @@ public class WriteTextFile
 
         var obj = new Lad
         {
-            firstName = "Richard",
-            lastName = "Chaney",
+            firstName = "RIchard",
+            lastName = "Gazey",
             dateOfBirth = new MyDate
             {
                 year = 1901,
@@ -57,7 +57,7 @@ public class WriteTextFile
 
 
 
-        const string MyPassword = "password=OCyprn76;server=WALSNT80922\\SQLEXPRESS;";
+        const string MyPassword = "password=OCyprn7 6;server=WALSNT80922\\SQLEXPRESS;";
         const string MyConnectioNTiemout = "connection timeout=15";
         const string MyTruestedConnection = "Trusted_Connection=yes;";
         const string MyUSerid = "user id=sa;";
