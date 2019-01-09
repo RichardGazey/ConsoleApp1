@@ -40,7 +40,7 @@ public class WriteTextFile
             dateOfBirth = new MyDate
             {
                 year = 1901,
-                month = 4,
+                month = 5,
                 day = 30
             }
           
