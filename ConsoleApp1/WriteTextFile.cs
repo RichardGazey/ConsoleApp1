@@ -39,7 +39,7 @@ public class WriteTextFile
             lastName = "GAZEY",
             dateOfBirth = new MyDate
             {
-                year = 1901,
+                year = 1911,
                 month = 5,
                 day = 30
             }
